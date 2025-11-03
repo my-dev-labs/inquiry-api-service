@@ -37,10 +37,10 @@ jobs:
         run: |
           git clone --branch ${{ env.KNOWLG_CORE_RELEASE_TAG }} https://github.com/Rakshitha-D/knowledge-platform.git
           cd knowledge-platform
-          mvn clean install -DskipTests=true -DCLOUD_STORE_GROUP_ID=${{env.CLOUD_STORE_GROUP_ID }} -DCLOUD_STORE_ARTIFACT_ID=${{ env.CLOUD_STORE_ARTIFACT_ID }} -DCLOUD_STORE_VERSION=${{ env.CLOUD_STORE_VERSION }} -Pknowlg-core
+          mvn clean install -Dmaven.test.skip=true -DCLOUD_STORE_GROUP_ID=${{env.CLOUD_STORE_GROUP_ID }} -DCLOUD_STORE_ARTIFACT_ID=${{ env.CLOUD_STORE_ARTIFACT_ID }} -DCLOUD_STORE_VERSION=${{ env.CLOUD_STORE_VERSION }} -Pknowlg-core
       
       - name: Build complete inquiry service
-        run: mvn clean install -DskipTests=true
+        run: mvn clean install -Dmaven.test.skip=true
       
       - name: Build assessment-service
         working-directory: assessment-api/assessment-service
