@@ -37,7 +37,7 @@ jobs:
         run: |
           git clone --branch ${{ env.KNOWLG_CORE_RELEASE_TAG }} https://github.com/Sunbird-Knowlg/knowledge-platform.git
           cd knowledge-platform
-          mvn clean install -DskipTests=true -DCLOUD_STORE_GROUP_ID=${{env.CLOUD_STORE_GROUP_ID }} -DCLOUD_STORE_ARTIFACT_ID=${{ env.CLOUD_STORE_ARTIFACT_ID }} -DCLOUD_STORE_VERSION=${{ env. CLOUD_STORE_VERSION }} -Pknowlg-core
+          mvn clean install -DskipTests=true -DCLOUD_STORE_GROUP_ID=${{env.CLOUD_STORE_GROUP_ID }} -DCLOUD_STORE_ARTIFACT_ID=${{ env.CLOUD_STORE_ARTIFACT_ID }} -DCLOUD_STORE_VERSION=${{ env.CLOUD_STORE_VERSION }} -Pknowlg-core
       
       - name: Build complete inquiry service
         run: mvn clean install -DskipTests=true
